@@ -50,10 +50,12 @@ nav.site-nav a:hover {
 }
 
 .hero-logo {
-  position: absolute;
-  top: 10%;
-  height: 50%;
-  width: auto; 
+  position: relative;
+  transform: translate;
+  width: 60vw; 
+  height: 30vw;
+  max-width: 816px;
+  max-height: 265px;
   z-index: 2;
 }
 
@@ -254,8 +256,13 @@ nav.site-nav a:hover {
   box-shadow: 0 0 20px #e625df;
   transition: box-shadow .2s ease, filter .2s ease;
 }
-#contactForm .status { color: #ffc200; }
-#contact .card a { color: #ffc200; }
+#contactForm .status { 
+    color: #ffc200; 
+}
+
+#contact .card a { 
+    color: #ffc200; 
+}
 
 
 /*==== footer  ====*/
@@ -334,42 +341,53 @@ a:hover {
   box-shadow: 0 0 20px #e625df;
 }
 
+/* 1 col on phones */
 .test-flash-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  
-  text-align: justify;
-  text-justify: inter-word;
-  padding: 10px;
+  display: grid;
   gap: 2rem;
-  max-width: 1400px; 
+  grid-template-columns: 1fr;
+  max-width: 1400px;
   margin-inline: auto;
-}
-.test-card {
-  flex: 1 1 30%;
-  
-  margin: 2rem auto;
-  padding: 2rem clamp(1rem, 3vw, 2.5rem);
-  border-radius: 1rem;
-  background: #000000;
-  color: #e625df;
-  text-align: center;
-  box-sizing: border-box;
-  box-shadow: 0 0 20px #e625df;
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  padding: 10px;
 }
 
+/* 2 cols on tablets */
+@media (min-width: 600px) {
+  .test-flash-card { grid-template-columns: repeat(2, minmax(280px, 1fr)); }
+}
+
+/* 3 cols on desktops (keeps 2 rows of 3) */
+@media (min-width: 1000px) {
+  .test-flash-card { grid-template-columns: repeat(3, minmax(280px, 1fr)); }
+}
+
+.test-card {
+  flex: 1 1 300px;               /* uniform width targets */
+  max-width: 420px;              /* prevents extra-wide cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 1.75rem 1.5rem;
+  border-radius: 1rem;
+  background: #000;
+  color: #e625df;
+  box-shadow: 0 0 20px currentColor;
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+.test-card h2 { margin: 0 0 .5rem; }
+.test-card p  { margin: 0 0 1rem; }
+.test-icon    { width: 56px; height: auto; margin-top: auto; }
 
 .test-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 
+  transform: translateY(-4px);
+  box-shadow:
     0 0 10px currentColor,
-    0 0 25px currentColor,
-    0 0 40px currentColor;
+    0 0 22px currentColor,
+    0 0 36px currentColor;
 }
+
 
 .test-flash-card .test-card-cyan {
   box-shadow: 0 0 20px #00ffff; /* Cyan */
