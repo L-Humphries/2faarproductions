@@ -1,6 +1,6 @@
 (() => {
   // ====== CONFIG ======
-  const FORM_ENDPOINT = "https://formspree.io/f/mzzjryzl"; // FILL OUT FORMSPREE PERSONAL LINK HERE!!!!!
+  const FORM_ENDPOINT = "https://formspree.io/f/mnngoool"; 
 
   // ====== UTIL ======
   const $ = (id) => document.getElementById(id);
