@@ -431,3 +431,33 @@ a:hover {
     flex-basis: 100%;
   }
 }
+
+
+/* cute text animation - about me section. */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.title span:after{
+  content: 'Artist';
+  animation: words 6s infinite;
+}
+
+@keyframes words {
+  0%, 33% {
+    content: 'an Artist';
+    color: #00ffff;
+  }
+
+  34%, 66%{
+    content: 'a Musician';
+    color: #e625df;
+  }
+
+  67%, 100%{
+    content: 'a Producer';
+    color: #00ffa6;
+  }
+
+}
